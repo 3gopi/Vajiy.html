@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+}
+
+.birthday-wishes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.wish {
+  width: 400px;
+
+  padding: 20px;
+  background-color: #f0f0f0;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.wish:hover {
+  transform: translateY(-5px);
+}
+
+.wish img {
+  width: 100%;
+
+}
+
+.wish p {
+  margin-top: 10px;
+}
+@keyframes heartbeat {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}
+
+.wish {
+  width: 400px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: heartbeat 2s infinite; /* Apply heartbeat animation */
+}
+
+.wish:hover {
+  animation: none; /* Stop animation on hover */
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.wish p {
+  margin-top: 10px;
+}
+
+.heart {
+  animation: heartbeat 1s infinite; /* Apply heartbeat animation */
+}
+
+
+
+
+</style>
+<body>
+  <div class="container">
+
+    <div class="birthday-wishes">
+      <div class="wish" id="wish1">
+        <img src="/WhatsApp Image 2024-06-08 at 16.47.32_c93a0b12.jpg" alt="Friend Photo">
+        <p>Hey Viji,
+
+          Just wanted to remind you how awesome you are. You turn my bad days around with your crazy jokes. Remember our day outs and silly talks? Life would be so dull without you. Thanks for being my partner in crime and my rock. Love you tons! I'm always with you on your journey.</p>
+      </div>
+      <!-- Repeat similar structure for other wishes -->
+    </div>
+  </div>
+
+  <script src="script.js">
+    document.addEventListener("DOMContentLoaded", function() {
+  const wishes = document.querySelectorAll('.wish');
+
+  wishes.forEach((wish, index) => {
+    // Initially hide wishes
+    wish.style.opacity = 0;
+    wish.style.transform = 'translateY(20px)';
+    
+    // Fade in wishes with delay
+    setTimeout(() => {
+      wish.style.opacity = 1;
+      wish.style.transform = 'translateY(0)';
+    }, index * 300); // Delay each wish by 300ms
+  });
+});
+
+  </script>
+</body>
+</html>
